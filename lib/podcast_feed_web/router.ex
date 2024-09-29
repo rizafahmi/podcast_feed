@@ -5,8 +5,9 @@ defmodule PodcastFeedWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PodcastFeedWeb do
+  scope "/api", PodcastFeedWeb do
     pipe_through :api
     get "/", HomeController, :index
+    resources "/episodes", EpisodeController, except: [:new, :edit]
   end
 end
