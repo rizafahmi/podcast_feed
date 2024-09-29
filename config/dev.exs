@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :podcast_feed, PodcastFeed.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "riza",
+  password: "",
   hostname: "localhost",
   database: "podcast_feed_dev",
   stacktrace: true,
