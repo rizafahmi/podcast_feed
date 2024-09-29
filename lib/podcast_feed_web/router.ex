@@ -5,7 +5,8 @@ defmodule PodcastFeedWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PodcastFeedWeb do
+  scope "/", PodcastFeedWeb do
     pipe_through :api
+    get "/", HomeController, :index
   end
 end
