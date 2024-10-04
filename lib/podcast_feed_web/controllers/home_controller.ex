@@ -27,18 +27,14 @@ defmodule PodcastFeedWeb.HomeController do
           </description>
           <link>https://ngobrol.in/web</link>
           <image>
-          <url>
-          https://i.ytimg.com/pl_c/PLTY2nW4jwtG8Sx2Bw6QShC271PzX31CtT/studio_square_thumbnail.jpg?sqp=CKGX6bcG-oaymwEICNAFENAFSFqi85f_AwYIoI6eqgY=&rs=AOn4CLC_S19WzNPoIBZOQedMhNkzSFUQjQ
-          </url>
+          <url><![CDATA[https://i.ytimg.com/pl_c/PLTY2nW4jwtG8Sx2Bw6QShC271PzX31CtT/studio_square_thumbnail.jpg?sqp=CKGX6bcG-oaymwEICNAFENAFSFqi85f_AwYIoI6eqgY=&rs=AOn4CLC_S19WzNPoIBZOQedMhNkzSFUQjQ]]></url>
           <title>Ngobrolin WEB</title>
           <link>https://ngobrol.in/web</link>
           </image>
           <generator>Podcast Creator</generator>
           <lastBuildDate>Tue, 24 Sep 2024 10:27:25 GMT</lastBuildDate>
           <atom:link href="https://anchor.fm/s/30348d4/podcast/rss" rel="self" type="application/rss+xml"/>
-          <author>
-          <![CDATA[ Ngobrolin WEB ]]>
-          </author>
+          <author><![CDATA[ Ngobrolin WEB ]]></author>
           <copyright>
           <![CDATA[ Ngobrolin WEB ]]>
           </copyright>
