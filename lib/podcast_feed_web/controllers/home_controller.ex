@@ -13,7 +13,10 @@ defmodule PodcastFeedWeb.HomeController do
     xml_data =
       """
       <% import Format %>
-          <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+      xmlns:podcast="https://podcastindex.org/namespace/1.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
           <channel>
           <title>
           <![CDATA[ Ngobrolin WEB ]]>
@@ -27,7 +30,7 @@ defmodule PodcastFeedWeb.HomeController do
           </description>
           <link>https://ngobrol.in/web</link>
           <image>
-          <url><![CDATA[https://i.ytimg.com/pl_c/PLTY2nW4jwtG8Sx2Bw6QShC271PzX31CtT/studio_square_thumbnail.jpg?sqp=CKGX6bcG-oaymwEICNAFENAFSFqi85f_AwYIoI6eqgY=&rs=AOn4CLC_S19WzNPoIBZOQedMhNkzSFUQjQ]]></url>
+          <url><![CDATA[https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png]></url>
           <title>Ngobrolin WEB</title>
           <link>https://ngobrol.in/web</link>
           </image>
@@ -41,7 +44,7 @@ defmodule PodcastFeedWeb.HomeController do
           <language>
           <![CDATA[ in ]]>
           </language>
-          <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+          <atom:link rel="self" />
           <itunes:author>Ngobrolin WEB</itunes:author>
           <itunes:summary>
           Yuk mari kita diskusi dan ngobrol ngalor-ngidul tentang dunia web. Agar tetap up-to-date dengan teknologi web terkini.
@@ -55,7 +58,7 @@ defmodule PodcastFeedWeb.HomeController do
           </itunes:owner>
           <itunes:explicit>No</itunes:explicit>
           <itunes:category text="Technology"/>
-          <itunes:image href="https://i.ytimg.com/pl_c/PLTY2nW4jwtG8Sx2Bw6QShC271PzX31CtT/studio_square_thumbnail.jpg?sqp=CKGX6bcG-oaymwEICNAFENAFSFqi85f_AwYIoI6eqgY=&rs=AOn4CLC_S19WzNPoIBZOQedMhNkzSFUQjQ"/>
+          <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png"/>
           <item>
           <%= for episode <- @episodes do %>
               <title>
@@ -66,7 +69,7 @@ defmodule PodcastFeedWeb.HomeController do
               <%= episode.description %>
               ]]>
               </description>
-              <link>TODO</link>
+              <link>https://ngweb-assets.s3.amazonaws.com/Ngobrolin%20URL%20-%20Ngobrolin%20WEB%20ep45%20%5BEMynH33TrBI%5D.mp4</link>
               <pubDate><%= episode.updated_at %></pubDate>
               <guid isPermaLink="false"><%= episode.id %></guid>
               <dc:creator>Ngobrolin WEB</dc:creator>
@@ -78,7 +81,7 @@ defmodule PodcastFeedWeb.HomeController do
               </itunes:summary>
               <itunes:explicit>No</itunes:explicit>
               <itunes:duration><%= Format.duration_format(episode.duration) %></itunes:duration>
-              <itunes:image href="" />
+              <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png" />
               <itunes:season><%= episode.season %></itunes:season>
               <itunes:episode><%= episode.episode %></itunes:episode>
               <itunes:episodeType>full</itunes:episodeType>
