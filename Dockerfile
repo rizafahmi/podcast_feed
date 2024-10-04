@@ -90,4 +90,4 @@ USER nobody
 # above and adding an entrypoint. See https://github.com/krallin/tini for details
 # ENTRYPOINT ["/tini", "--"]
 
-CMD ["sh", "-c", "/app/_build/${MIX_ENV}/rel/podcast_feed/bin/migrate && /app/bin/server"]
+CMD ["/app/bin/start"]
