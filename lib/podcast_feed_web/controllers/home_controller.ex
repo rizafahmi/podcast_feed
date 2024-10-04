@@ -12,11 +12,8 @@ defmodule PodcastFeedWeb.HomeController do
 
     xml_data =
       """
-      <% import Format %>
       <?xml version="1.0" encoding="UTF-8"?>
-      <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-      xmlns:podcast="https://podcastindex.org/namespace/1.0"
-      xmlns:atom="http://www.w3.org/2005/Atom">
+      <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom">
           <channel>
           <title>
           <![CDATA[ Ngobrolin WEB ]]>
@@ -59,6 +56,7 @@ defmodule PodcastFeedWeb.HomeController do
           <itunes:explicit>No</itunes:explicit>
           <itunes:category text="Technology"/>
           <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png"/>
+          <% import Format %>
           <item>
           <%= for episode <- @episodes do %>
               <title>
@@ -87,6 +85,8 @@ defmodule PodcastFeedWeb.HomeController do
               <itunes:episodeType>full</itunes:episodeType>
               <% end %>
           </item>
+        </channel>
+      </rss>
       """
       |> EEx.eval_string(assigns: [episodes: episodes])
 
