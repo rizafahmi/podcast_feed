@@ -12,18 +12,16 @@ defmodule PodcastFeedWeb.HomeController do
 
     xml_data =
       """
-      <?xml version="1.0" encoding="UTF-8"?>
+      <?xml version="1.0"?>
       <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom">
           <channel>
           <title>
-          <![CDATA[ Ngobrolin WEB ]]>
+          <![CDATA[Ngobrolin WEB]]>
           </title>
           <description>
-          <![CDATA[
-      Yuk mari kita diskusi dan ngobrol ngalor-ngidul tentang dunia web. Agar tetap up-to-date dengan teknologi web terkini.
+          <![CDATA[Yuk mari kita diskusi dan ngobrol ngalor-ngidul tentang dunia web. Agar tetap up-to-date dengan teknologi web terkini.
 
-      Topik, tautan dan pertanyaan menarik bisa dilayangkan ke https://bit.ly/ngobrolinweb
-          ]]>
+      Topik, tautan dan pertanyaan menarik bisa dilayangkan ke https://bit.ly/ngobrolinweb]]>
           </description>
           <link>https://ngobrol.in/web</link>
           <image>
@@ -34,12 +32,12 @@ defmodule PodcastFeedWeb.HomeController do
           <generator>Podcast Creator</generator>
           <lastBuildDate>Tue, 24 Sep 2024 10:27:25 GMT</lastBuildDate>
           <atom:link href="https://anchor.fm/s/30348d4/podcast/rss" rel="self" type="application/rss+xml"/>
-          <author><![CDATA[ Ngobrolin WEB ]]></author>
+          <author><![CDATA[Ngobrolin WEB]]></author>
           <copyright>
-          <![CDATA[ Ngobrolin WEB ]]>
+          <![CDATA[Ngobrolin WEB]]>
           </copyright>
           <language>
-          <![CDATA[ in ]]>
+          <![CDATA[in]]>
           </language>
           <atom:link rel="self" />
           <itunes:author>Ngobrolin WEB</itunes:author>
@@ -60,12 +58,10 @@ defmodule PodcastFeedWeb.HomeController do
           <item>
           <%= for episode <- @episodes do %>
               <title>
-              <![CDATA[ <%= episode.title %> ]]>
+              <![CDATA[<%= episode.title %>]]>
               </title>
               <description>
-              <![CDATA[
-              <%= episode.description %>
-              ]]>
+              <![CDATA[<%= episode.description %>]]>
               </description>
               <link>https://ngweb-assets.s3.amazonaws.com/Ngobrolin%20URL%20-%20Ngobrolin%20WEB%20ep45%20%5BEMynH33TrBI%5D.mp4</link>
               <pubDate><%= episode.updated_at %></pubDate>
@@ -73,9 +69,7 @@ defmodule PodcastFeedWeb.HomeController do
               <dc:creator>Ngobrolin WEB</dc:creator>
               <enclosure url="<%= episode.link %>" length="<%= episode.duration %>" type="audio/mpeg" />
               <itunes:summary>
-              <![CDATA[
-              <%= episode.description %>
-              ]]>
+              <![CDATA[<%= episode.description %>]]>
               </itunes:summary>
               <itunes:explicit>No</itunes:explicit>
               <itunes:duration><%= Format.duration_format(episode.duration) %></itunes:duration>
