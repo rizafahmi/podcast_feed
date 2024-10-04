@@ -32,7 +32,7 @@ RUN mix local.hex --force && \
     mix local.rebar --force
 
 # set build ENV
-ENV MIX_ENV="prod"
+ENV MIX_ENV "prod"
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
@@ -82,6 +82,9 @@ ENV MIX_ENV "prod"
 # Only copy the final release from the build stage
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/podcast_feed ./
 
+COPY --chown=nobody:root ./rel/overlays/bin/start /app/bin/start
+RUN chmod +x /app/bin/start
+
 USER nobody
 
 # If using an environment that doesn't automatically reap zombie processes, it is
@@ -89,4 +92,4 @@ USER nobody
 # above and adding an entrypoint. See https://github.com/krallin/tini for details
 # ENTRYPOINT ["/tini", "--"]
 
-CMD ["/app/bin/start"]
+CMD ["sh", "-c", "/app/bin/start"]
