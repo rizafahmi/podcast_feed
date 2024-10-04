@@ -23,7 +23,15 @@ defmodule PodcastFeedWeb.EpisodeControllerTest do
     season: 43,
     title: "some updated title"
   }
-  @invalid_attrs %{description: nil, duration: nil, episode: nil, image: nil, link: nil, season: nil, title: nil}
+  @invalid_attrs %{
+    description: nil,
+    duration: nil,
+    episode: nil,
+    image: nil,
+    link: nil,
+    season: nil,
+    title: nil
+  }
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
