@@ -26,3 +26,5 @@ erl_crash.dump
 podcast_feed-*.tar
 
 .tmp/
+
+.envrc
