@@ -11,12 +11,15 @@
 # and so on) as they will fail if something goes wrong.
 
 PodcastFeed.Repo.insert!(%PodcastFeed.Podcasts.Episode{
-  title: "The History of the World",
-  description: "The History of the World",
-  image:
-    "https://media.npr.org/assets/img/2018/04/13/ap_170324854415_16x9-e1523888859682-s6-c85.jpg",
-  duration: 3600,
-  link: "https://www.npr.org/podcasts/510313/npr/the-history-of-the-world/podcast.mp3",
-  episode: 1,
+  title: "Ngobrolin URL - Ngobrolin WEB ep45",
+  description:
+    "Yuk mari kita diskusi dan ngobrol ngalor-ngidul tentang dunia web. Agar tetap up-to-date dengan teknologi web terkini.
+
+  Topik, tautan dan pertanyaan menarik bisa dilayangkan ke https://bit.ly/ngobrolinweb",
+  image: "https://i.ytimg.com/vi/EMynH33TrBI/maxresdefault.jpg",
+  duration: 4216,
+  link:
+    "https://ngweb-assets.s3.amazonaws.com/Ngobrolin+URL+-+Ngobrolin+WEB+ep45+%5BEMynH33TrBI%5D.mp4",
+  episode: 45,
   season: 1
 })
