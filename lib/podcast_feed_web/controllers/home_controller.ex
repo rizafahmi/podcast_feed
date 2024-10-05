@@ -27,7 +27,7 @@ defmodule PodcastFeedWeb.HomeController do
           </description>
           <link>https://ngobrol.in/web</link>
           <image>
-          <url><![CDATA[https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png]]></url>
+          <url><![CDATA[https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.jpg]]></url>
           <title>Ngobrolin WEB</title>
           <link>https://ngobrol.in/web</link>
           </image>
@@ -53,8 +53,9 @@ defmodule PodcastFeedWeb.HomeController do
           </itunes:owner>
           <itunes:explicit>false</itunes:explicit>
           <itunes:category text="Technology"/>
-          <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png"/>
+          <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.jpg"/>
           <podcast:locked>no</podcast:locked>
+          <podcast:guid>ngweb-podcast-feed</podcast:guid>
           <% import Format %>
           <item>
           <%= for episode <- @episodes do %>
@@ -71,9 +72,8 @@ defmodule PodcastFeedWeb.HomeController do
               <itunes:summary>
               <![CDATA[<%= episode.description %>]]>
               </itunes:summary>
-              <itunes:explicit>No</itunes:explicit>
               <itunes:duration><%= Format.duration_format(episode.duration) %></itunes:duration>
-              <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png" />
+              <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.jpg" />
               <itunes:season><%= episode.season %></itunes:season>
               <itunes:episode><%= episode.episode %></itunes:episode>
               <itunes:episodeType>full</itunes:episodeType>
