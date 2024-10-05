@@ -13,7 +13,10 @@ defmodule PodcastFeedWeb.HomeController do
     xml_data =
       """
       <?xml version="1.0"?>
-      <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom">
+      <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+      xmlns:podcast="https://podcastindex.org/namespace/1.0"
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/">
           <channel>
           <title>
           <![CDATA[Ngobrolin WEB]]>
@@ -73,6 +76,7 @@ defmodule PodcastFeedWeb.HomeController do
               <itunes:season><%= episode.season %></itunes:season>
               <itunes:episode><%= episode.episode %></itunes:episode>
               <itunes:episodeType>full</itunes:episodeType>
+              <itunes:explicit>false</itunes:explicit>
               <% end %>
           </item>
         </channel>
