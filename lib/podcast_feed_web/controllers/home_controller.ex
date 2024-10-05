@@ -78,6 +78,7 @@ defmodule PodcastFeedWeb.HomeController do
               <itunes:episode><%= episode.episode %></itunes:episode>
               <itunes:episodeType>full</itunes:episodeType>
               <itunes:explicit>false</itunes:explicit>
+              <podcast:transcript>TBA</podcast:transcript>
               <% end %>
           </item>
         </channel>
