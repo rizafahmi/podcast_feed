@@ -51,9 +51,10 @@ defmodule PodcastFeedWeb.HomeController do
           <itunes:name>Ngobrolin WEB</itunes:name>
           <itunes:email>rizafahmi@gmail.com</itunes:email>
           </itunes:owner>
-          <itunes:explicit>No</itunes:explicit>
+          <itunes:explicit>false</itunes:explicit>
           <itunes:category text="Technology"/>
           <itunes:image href="https://ngweb-assets.s3.amazonaws.com/thumbnail-podcast-square.png"/>
+          <podcast:locked>no</podcast:locked>
           <% import Format %>
           <item>
           <%= for episode <- @episodes do %>
