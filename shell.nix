@@ -12,7 +12,7 @@ let
 	    libiconv
 	    glibcLocales
 	    nodejs_22
-	    postgresql
+	    postgresql_15
 	  ];
 
 	inputs = basePackages

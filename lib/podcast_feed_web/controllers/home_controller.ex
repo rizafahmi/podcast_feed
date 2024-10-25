@@ -57,8 +57,8 @@ defmodule PodcastFeedWeb.HomeController do
           <podcast:locked>no</podcast:locked>
           <podcast:guid>ngweb-podcast-feed</podcast:guid>
           <% import Format %>
-          <item>
           <%= for episode <- @episodes do %>
+          <item>
               <title>
               <![CDATA[<%= episode.title %>]]>
               </title>
@@ -79,8 +79,8 @@ defmodule PodcastFeedWeb.HomeController do
               <itunes:episodeType>full</itunes:episodeType>
               <itunes:explicit>false</itunes:explicit>
               <podcast:transcript>TBA</podcast:transcript>
-              <% end %>
           </item>
+          <% end %>
         </channel>
       </rss>
       """
