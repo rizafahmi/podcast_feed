@@ -66,7 +66,7 @@ defmodule PodcastFeedWeb.HomeController do
               <![CDATA[<%= episode.description %>]]>
               </description>
               <link>https://ngweb-assets.s3.amazonaws.com/Ngobrolin%20URL%20-%20Ngobrolin%20WEB%20ep45%20%5BEMynH33TrBI%5D.mp4</link>
-              <pubDate><%= episode.updated_at %></pubDate>
+              <pubDate><%= Format.date(episode.updated_at) %></pubDate>
               <guid isPermaLink="false"><%= episode.id %></guid>
               <enclosure url="<%= episode.link %>" length="<%= episode.duration %>" type="audio/mpeg" />
               <itunes:summary>
@@ -98,5 +98,9 @@ defmodule Format do
     minutes = div(duration, 60)
     seconds = rem(duration, 60)
     "#{minutes}:#{String.pad_leading(Integer.to_string(seconds), 2, "0")}"
+  end
+
+  def date(utc_datetime) do
+    Timex.format!(utc_datetime, "{WDshort}, {0D} {Mshort} {YYYY} {h24}:{m}:{s} GMT")
   end
 end
